@@ -1,0 +1,66 @@
+<% include ../partials/exam_head%>
+    <section class="content">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Question</h3>
+                    <div class="box-tools">
+                        <form action="/uploadques" method="get">
+                            <button type="submit" class="btn btn-default "><i class="glyphicon glyphicon-plus"></i></button>
+                        </form>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Content</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <% questions.forEach(function(i){%>
+                                <tr>
+                                    <td>
+                                        <%=i.idquestion%>
+                                    </td>
+                                    <td>
+                                        <%=i.ques_content%>
+
+                                    </td>
+                                    <td>
+                                        <a href="/update/<%=type%>/<%=i.idquestion%>">Update</a>
+                                    </td>
+                                    <td>
+                                        <a href="/del/<%=type%>/<%=i.idquestion%>">Delete</a>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <div class="box-tools">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <%pages.forEach(function(i,idx){%>
+                                <li>
+                                    <a href="/ques/<%=type%>/<%=idx%>">
+                                        <%=idx+1%>
+                                    </a>
+                                </li>
+                                <%})%>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <% include ../partials/exam_footer%>

@@ -1,0 +1,54 @@
+<% include ../partials/exam_head%>
+    <section class="content">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Simple Full Width Table</h3>
+
+                    <div class="box-tools">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th style="width: 10px">ID</th>
+                                <th>Title</th>
+                                <th style="width: 40px">Level</th>
+                                <td style="width: 50px"></td>
+                                <td style="width: 50px"></td>
+                            </tr>
+                            <% exams.forEach(function(i){%>
+                                <tr>
+                                    <td>
+                                        <%=i.idexam%>
+                                    </td>
+                                    <td>
+                                        <%=i.title%>
+                                    </td>
+                                    <td><span class="badge bg-red"><%=i.level%></span></td>
+                                    <td><a href="">Update</a></td>
+                                    <td><a href="">Delete</a></td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <% include ../partials/exam_footer%>

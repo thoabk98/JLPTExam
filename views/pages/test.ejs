@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta property="fb:app_id" content="1544691262468572" />
+
+    <meta property="fb:admins" content="100001904463127" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+
+    <link href="http://jlpt4u.info/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link href="http://jlpt4u.info/public/css/blog-home.css" rel="stylesheet">
+
+    <title>JLPT</title>
+
+    <script src="http://jlpt4u.info//public/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+    <script src="http://jlpt4u.info/public/js/script.js"></script>
+
+    <script src="http://jlpt4u.info/public/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+    <script src="http://jlpt4u.info/public/js/jquery-ui.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="http://jlpt4u.info/public/js/bootstrap.min.js"></script>
+
+    <link href="http://jlpt4u.info/public/css/luyen-gia-de-thi.css" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed&amp;subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="description" content="Luyện thi năng lực Nhật ngữ JLPT online miễn phí" />
+    <style>
+        .correct {
+            background: no-repeat scroll right 5px rgb(206, 247, 186);
+            padding-right: 20px;
+        }
+        
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        
+        .wrapper {
+            text-align: center;
+            position: relative;
+        }
+        
+        .choosen {
+            background-color: #fff;
+        }
+        
+        .check {
+            position: fixed;
+            right: 0;
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+        
+        .affix {
+            overflow-y: scroll;
+            top: 0px;
+            width: 290px;
+            z-index: 9999 !important;
+        }
+    </style>
+
+</head>
+
+<div id="fb-root"></div>
+
+
+<body>
+
+
+
+    <!-- Navigation -->
+
+    <!-- Start navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#our-navbar">
+
+                    <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <div class="collapse navbar-collapse" id="our-navbar">
+
+                <ul class="nav navbar-nav navbar-right ">
+
+                    <li class="active"><a href="/user">Home</a></li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+        <!-- Container -->
+
+    </nav>
+
+    <!-- End navbar -->
+
+    <!-- Page Content -->
+
+
+
+    <div class="container">
+
+        <div id="content_user">
+
+            <div id="luyen-giai-de-thi">
+
+                <div class="row">
+
+                    <div class="col-lg-90 col-md-80 left">
+
+                        <div class="col-lg-120 col-md-120 title-baihoc">
+
+                            <span id="ctl00_ContentPlaceHolder1_lb_title">
+            
+                                        <span class="tende"><%=question[0].values[0].values[0].title%></span>
+
+
+
+                            </span>
+
+                        </div>
+                        <div class="col-xl-120 col-lg-120 col-md-120 col-sm-120 col-xs-120" id="control-tab-main">
+                            <p class="col-xl-37 col-lg-37 col-md-37 col-sm-37 col-xs-120 active" tag="control-tab-sub1" onclick="controlmain($(this))">
+                                文字ー語彙ー読解
+                            </p>
+                            <p class="col-xl-37 col-lg-37 col-md-37 col-sm-37 col-xs-120" tag="control-tab-sub2" onclick="controlmain($(this))">
+                                聴解
+                            </p>
+                        </div>
+                        <span class="col-xl-120 col-lg-120 col-md-120 col-sm-120 col-xs-120" id="ctl00_ContentPlaceHolder1_lb_tab_cauhoi">
+                    <div id='control-tab-sub'>
+                        <ul style='-webkit-padding-start: 0px; -moz-padding-start: 0px; -ms-padding-start: 0px;  -o-padding-start: 0px;' class='control-tab-sub1'>
+                            <li class='sub1'><span onclick='controltab($(this))' style="display: none"></span></li>
+
+                        </ul>
+                        <ul style='-webkit-padding-start: 0px; -moz-padding-start: 0px; -ms-padding-start: 0px;  -o-padding-start: 0px;' class='control-tab-sub2'>
+                            <li class='sub1'><span onclick='controltab($(this))' style="display: none"></span></li>
+
+                        </ul>
+                    </div>
+                    </span>
+
+                    <span id="ctl00_ContentPlaceHolder1_lb_cauhoi">
+
+                        <div id="danh-sach-cau-hoi" class="sub" made="464" style="padding: 25px">
+                            <div class="control-tab-sub1" style="display: block" name ="listques">
+                            <% var count = 1%>
+                            <% var num = 1%>
+                            <div class="Moji-Goi">
+                            <%question.forEach(function(q,n){%>
+                                <strong><span style="font-size: large; color: #0000ff;">問題<%=count%></span></strong>
+
+                    <%if(q.values[0].values[0].idtype !=1){%>
+                        <p style="font-size: 24px;">
+                            <%-q.values[0].values[0].content%>
+                        </p>
+                        <% }%>
+                            <%q.values.forEach(function(i,index){ %>
+                                <li id="ques<%=i.key%>" style="margin-bottom: 20px">
+                                    <p class='titlecauhoi'>
+                                        <span class='index_of_question'><%=num%></span>
+                                        <% num ++ %>
+                                            <%-i.values[0].ques_content%>
+                                    </p>
+                                    <%if(i.values[0].images != null){%>
+                                        <div>
+                                            <img src="<%=i.values[0].images%>" alt="choukai" class="center">
+                                        </div>
+                                        <%}%>
+                                            <%if(i.values[0].mp3 != null){%>
+                                                <div class="wrapper">
+                                                    <audio controls>
+                                                                 <source src="<%=i.values[0].mp3%>" type="audio/mpeg" class="center">
+                                                            </audio>
+                                                </div>
+                                                <%}%>
+                                                    <%i.values.forEach(function(e,idx){%>
+                                                        <br class='clear-fix' />
+                                                        <span id="ans<%= e.idanswer %>" ansidx="<%=i.key%>">
+                                                    
+                                                    <b class="index_of_answer"><%=idx + 1%>. </b>
+                                                    <%=e.ans_content%>
+                                                        </span>
+                                                        <br class='clear-fix' />
+                                                        <%})%>
+                                </li>
+                                <%})%>
+
+
+
+                                    <% count++; %>
+                                        <%  })%>
+
+                </div>
+                <div class="dokkai">
+                    <%dokkai.forEach(function(d){%>
+                        <strong><span style="font-size: large; color: #0000ff;">問題<%=count%></span></strong>
+
+                        <p style="font-size: 24px;">
+                            <%-d.values[0].values[0].values[0].content%>
+                        </p>
+                        <%d.values.forEach(function(q,n){%>
+
+                            <div style="border: 1px solid #ccc!important;padding: 0.01em 16px;border-radius: 16px; line-height: 30px; font-size: 18px">
+                                <%-q.values[0].values[0].dok_content%>
+                            </div>
+
+                            <%if(q.values[0].values[0].idtype !=1){%>
+                                <p style="font-size: 24px;">
+                                    <%=q.values[0].values[0].content%>
+                                </p>
+                                <% }%>
+                                    <%q.values.forEach(function(i,index){ %>
+                                        <li id="ques<%=i.key%>" style="margin-bottom: 20px">
+                                            <p class='titlecauhoi'>
+                                                <span class='index_of_question'><%=num%></span>
+                                                <% num ++ %>
+                                                    <%=i.values[0].ques_content%>
+                                            </p>
+                                            <%if(i.values[0].images != null){%>
+                                                <div>
+                                                    <img src="<%=i.values[0].images%>" alt="choukai" class="center">
+                                                </div>
+                                                <%}%>
+                                                    <%if(i.values[0].mp3 != null){%>
+                                                        <div class="wrapper">
+                                                            <audio controls>
+                                                             <source src="<%=i.values[0].mp3%>" type="audio/mpeg" class="center">
+                                                        </audio>
+                                                        </div>
+                                                        <%}%>
+                                                            <%i.values.forEach(function(e,idx){%>
+                                                                <br class='clear-fix' />
+                                                                <span id="ans<%= e.idanswer %>" ansidx="<%=i.key%>">
+                                                
+                                                <b class="index_of_answer"><%=idx + 1%>. </b>
+                                                <%=e.ans_content%>
+                                                    </span>
+                                                                <br class='clear-fix' />
+                                                                <%})%>
+                                        </li>
+                                        <%})%>
+
+
+
+                                            <% count++; %>
+                                                <%  })%>
+                                                    <%})%>
+                </div>
+            </div>
+
+            <div class="control-tab-sub2" style="display: none" name="listques">
+                <%choukai.forEach(function(q,n){%>
+                    <strong><span style="font-size: large; color: #0000ff;">問題<%=count%></span></strong>
+
+                    <%if(q.values[0].values[0].idtype !=1){%>
+                        <p style="font-size: 24px;">
+                            <%-q.values[0].values[0].content%>
+                        </p>
+                        <% }%>
+                            <%q.values.forEach(function(i,index){ %>
+                                <li id="ques<%=i.key%>" style="margin-bottom: 20px">
+                                    <p class='titlecauhoi'>
+                                        <span class='index_of_question'><%=num%></span>
+                                        <% num ++ %>
+                                            <%-i.values[0].ques_content%>
+                                    </p>
+                                    <%if(i.values[0].images != null){%>
+                                        <div>
+                                            <img src="<%=i.values[0].images%>" alt="choukai" class="center">
+                                        </div>
+                                        <%}%>
+                                            <%if(i.values[0].mp3 != null){%>
+                                                <div class="wrapper">
+                                                    <audio controls>
+                                                     <source src="<%=i.values[0].mp3%>" type="audio/mpeg" class="center">
+                                                </audio>
+                                                </div>
+                                                <%}%>
+                                                    <%i.values.forEach(function(e,idx){%>
+                                                        <br class='clear-fix' />
+                                                        <span id="ans<%= e.idanswer %>" ansidx="<%=i.key%>">
+                                        
+                                        <b class="index_of_answer"><%=idx + 1%>. </b>
+                                        <%=e.ans_content%>
+                                            </span>
+                                                        <br class='clear-fix' />
+                                                        <%})%>
+                                </li>
+                                <%})%>
+
+
+
+                                    <% count++; %>
+                                        <%  })%>
+
+            </div>
+        </div>
+        </span>
+
+    </div>
+
+    <div class="col-xl-30 col-lg-30 col-md-40 col-sm-120 col-xs-120 right">
+        <div class="row">
+            <button class="btn btn-lg btn-primary bt_nopbai" onclick="nopbaithi()">
+                                チェック（CHECK）
+                    </button>
+        </div>
+        <div id="phieu-dap-an" class="sub1" data-spy="affix" data-offset-top="190" style="height: 40px">
+            <div class="title-dapan">
+                <span class="phantraloi">Answer:</span> <span id="thoigian"></span>
+            </div>
+            <span id='ctl00_ContentPlaceHolder1_lb_phieudapan' style="display: block">
+                    <div class='control-da control-tab-sub1' name ="control-tab-sub1" > 
+                <ul class='sub1' >
+                    <% var count =1%>
+               <%question.forEach(function(q){%>
+                <%q.values.forEach(function(i,index){%>
+    <li class="<%= i.key%>">
+    <span class="col-lg-24 col-md-24 cau" onclick="bmdiv('1-1', $(this))" id="f<%=i.key%>"><%= count%></span>
+            <%i.values.forEach(function(e,idx){%>
+                <span class="col-lg-24 col-md-24" onclick="chonda($(this),'1-1-1')" name="<%= e.idanswer %>" id="check<%=e.idanswer%>" idx="<%=i.key%>"><%=idx+1%></span>
+                <%})%>
+                    <%count ++%>
+                        <%})%>
+                            <% })%>
+                                <%dokkai.forEach(function(d){%>
+                                    <%d.values.forEach(function(q){%>
+                                        <%q.values.forEach(function(i,index){%>
+                                            <li class="<%= i.key%>">
+                                                <span class="col-lg-24 col-md-24 cau" onclick="bmdiv('1-1', $(this))" id="f<%=i.key%>"><%= count%></span>
+                                                <%i.values.forEach(function(e,idx){%>
+                                                    <span class="col-lg-24 col-md-24" onclick="chonda($(this),'1-1-1')" name="<%= e.idanswer %>" id="check<%=e.idanswer%>" idx="<%=i.key%>"><%=idx+1%></span>
+                                                    <%})%>
+                                                        <%count ++%>
+                                                            <%})%>
+                                                                <% })%>
+                                                                    <%})%>
+
+
+                                                                        </ul>
+
+        </div>
+        <div class='control-da control-tab-sub2' name="control-tab-sub2" style="display: none">
+            <ul class='sub1'>
+                <%choukai.forEach(function(q){%>
+                    <%q.values.forEach(function(i,index){%>
+                        <li class="<%= i.key%>">
+                            <span class="col-lg-24 col-md-24 cau" onclick="bmdiv('1-1', $(this))" id="f<%=i.key%>"><%= count%></span>
+                            <%i.values.forEach(function(e,idx){%>
+                                <span class="col-lg-24 col-md-24" onclick="chonda($(this),'1-1-1')" name="<%= e.idanswer %>" id="check<%=e.idanswer%>" idx="<%=i.key%>"><%=idx+1%></span>
+                                <%})%>
+                                    <%count ++%>
+                                        <%})%>
+                                            <% })%>
+                        </li>
+            </ul>
+        </div>
+
+        </span>
+        <p style="clear: both">
+
+        </p>
+
+    </div>
+
+    </div>
+
+    <p style="clear: both">
+
+        &nbsp;</p>
+
+    </div>
+    <!-- /.row lef right -->
+
+
+
+    </div>
+
+    </div>
+
+
+    <!-- /.container -->
+
+    <!--  Start footer -->
+
+
+
+    <footer>
+
+        <div class="container">
+
+            <ul>
+
+                <li><a href="#">Contact us</a></li> |
+
+                <li class="copyright">&copy;2015 Truong Quoc Hung All Rights Reserved</li>
+
+            </ul>
+
+        </div>
+
+    </footer>
+
+    <!--  End footer -->
+
+
+
+</body>
+<script type="text/jscript">
+    var thoat = 0;
+
+    var base_url = $('head base').attr('href');
+
+    function center() {
+
+        $('#loading').css({
+            left: ($(window).width() - $('#loading').width()) / 2,
+            top: ($(window).height() - $('#loading').height()) / 2
+        });
+
+
+
+    }
+
+    // PHƯƠNG THỨC SHOW HÌNH LOADING
+
+
+
+    $.fn.centerToWindow = function(url_img)
+
+    {
+
+        var obj = $(this);
+
+        var obj_width = $(this).outerWidth(true);
+
+        var obj_height = $(this).outerHeight(true);
+
+        var window_width = window.innerWidth ? window.innerWidth : $(window).width();
+
+        var window_height = window.innerHeight ? window.innerHeight : $(window).height();
+
+
+
+        obj.css({
+
+            "position": "fixed",
+
+            "top": ((window_height / 2) - (obj_height / 2)) + "px",
+
+            "left": ((window_width / 2) - (obj_width / 2)) + "px"
+
+        });
+
+        obj.html("<img src='" + url_img + "' />").fadeIn('fast');
+
+    }
+
+
+
+
+
+    function loading_show(obj, url_img) {
+
+        var $loading = $(obj);
+
+        $loading.css({
+
+            display: "block",
+
+
+
+        })
+
+
+
+
+
+        $loading.find("img").attr({
+            src: url_img
+        });
+
+    }
+
+
+
+    // PHƯƠNG THỨC ẨN HÌNH LOADING
+
+
+
+    function loading_hide() {
+
+        $('#loading').hide();
+    }
+
+
+
+    function init_slim_scroll() {
+
+        var width = $(window).width();
+
+        if (width > 975) {
+
+            $("#scroll-content").slimScroll({
+
+                position: 'right',
+
+                size: '4px',
+
+                height: '924px',
+
+
+
+                railVisible: false,
+
+                alwaysVisible: true
+
+            });
+
+            $('#scroll-content').attr('style', 'height: 924px; overflow: hidden; width: auto');
+
+        } else {
+
+
+
+            $("#scroll-content").slimScroll({
+
+                size: '0px',
+
+                destroy: true
+
+            });
+
+            var $elem = $('#scroll-content'),
+
+                events = jQuery._data($elem[0], "events");
+
+
+
+            if (events) {
+
+                jQuery._removeData($elem[0], "events");
+
+            }
+
+            $('#scroll-content').attr('style', 'height: auto');
+
+
+
+        }
+
+    }
+
+
+
+    $(document).ready(function() {
+
+        var width = $(window).width();
+
+        //       alert(width);
+
+        if (width > 975) {
+
+            $("#scroll-content").slimScroll({
+
+                position: 'right',
+
+                size: '4px',
+
+                height: '924px',
+
+
+
+                railVisible: false,
+
+                alwaysVisible: true
+
+            });
+
+        }
+
+
+
+        //    init_slim_scroll();
+
+
+
+        var rtime;
+
+        var timeout = false;
+
+        var delta = 500;
+
+        $(window).resize(function() {
+
+            rtime = new Date();
+
+            if (timeout === false) {
+
+                timeout = true;
+
+                setTimeout(resizeend, delta);
+
+            }
+
+        });
+
+
+
+        function resizeend() {
+
+            if (new Date() - rtime < delta) {
+
+                setTimeout(resizeend, delta);
+
+            } else {
+
+                timeout = false;
+
+                //        alert('Done resizing');
+
+                init_slim_scroll();
+
+            }
+
+        }
+
+        window.onbeforeunload = function(e) {
+
+            if (thoat == 0)
+
+                return 'Are you sure you want to exit?';
+
+        };
+
+
+
+
+
+        $(".slimScrollBar.ui-draggable").css("background-color", "#fff").css("opacity", "1");
+
+        $("#scroll-content").scroll(function() {
+
+            $("div.slimScrollBar.ui-draggable").css({
+                top: ($("#scroll-content").scrollTop() / ($("#scroll-content").find("div." + $("#control-tab-main p.active").attr("tag") + " ul.active").height() / $("#scroll-content").height())).toString() + 'px'
+            });
+
+        });
+
+    });
+
+    function controlmain(obj) {
+        obj.parent().find("p").removeClass("active");
+
+        obj.addClass("active");
+
+        $("#control-tab-sub ul." + obj.attr("tag")).show();
+
+        $("div[name=listques").hide();
+
+        $(" div." + obj.attr("tag")).css('display', 'block');
+
+        $("#control-tab-sub ul." + obj.attr("tag")).find("li.sub1 span").click();
+    }
+
+    function controltab(obj) {
+        $("#danh-sach-cau-hoi #scroll-content div ul").hide().removeClass("active");
+
+        $("#danh-sach-cau-hoi #scroll-content div ul." + obj.parent().attr("class")).show().addClass("active");
+
+        $("#scroll-content div." + obj.parent().parent().attr("class")).show();
+
+        $("#danh-sach-cau-hoi").attr("class", obj.parent().attr("class"));
+
+        $("#phieu-dap-an").attr("class", obj.parent().attr("class"));
+
+        $("#phieu-dap-an div.control-da").hide();
+
+        $("#phieu-dap-an div.control-da." + obj.parent().parent().attr("class")).show();
+
+        $("#phieu-dap-an div ul").hide().removeClass("active");
+
+        $("#scroll-content").animate({
+            'scrollTop': 0
+        }, 0);
+
+        $("#phieu-dap-an div." + obj.parent().parent().attr("class") + " ul." + obj.parent().attr("class")).show().addClass("active");
+
+        $('audio').each(function() {
+
+            this.pause(); // Stop playing
+
+            this.currentTime = 0; // Reset time
+
+        });
+
+    }
+
+    var lock_check_answer = 0;
+
+
+
+    function chonda(obj, cl) {
+
+        if (lock_check_answer === 0) {
+
+            var key = "[rel='" + cl + "']";
+
+
+
+            if (obj.hasClass("active")) {
+
+                obj.removeClass("active");
+
+                obj.parent().find("span.cau").removeClass("datraloi");
+
+                $("#scroll-content div ul.active").find("li span." + cl).removeClass("active");
+
+                $("#scroll-content div ul.active").find("li span." + cl).parent().find('b').removeClass("active");
+
+                return;
+
+            }
+
+            obj.parent().find("span").removeClass("active");
+
+            $("#scroll-content div." + $("#control-tab-main p.active").attr("tag") + " ul.active").find("li span." + cl).parent().find("b").removeClass("active");
+
+            $("#scroll-content div." + $("#control-tab-main p.active").attr("tag") + " ul.active").find("li span." + cl).parent().find("span").removeClass("active");
+
+            obj.addClass("active");
+
+            obj.parent().find("span.cau").addClass("datraloi");
+
+            $("#scroll-content div." + $("#control-tab-main p.active").attr("tag") + " ul.active").find("li span." + cl).addClass("active");
+
+            $("#scroll-content div." + $("#control-tab-main p.active").attr("tag") + " ul.active").find("li span." + cl).parent().find(key).addClass("active");
+
+        }
+
+    }
+    var delay_time_star;
+
+    function thoigianthi(time) {
+
+        $("#thoigian").text(str_time(time));
+
+        delay_time_star = setInterval(function() {
+
+            $("#thoigian").text(str_time(time));
+
+            time--;
+
+
+
+        }, 1000);
+
+    }
+
+    function str_time(obj) {
+
+        if (lock_check_answer === 0) {
+
+            var time = parseInt(obj);
+
+
+
+            if (time == -1) {
+
+
+
+                alert('Time over!');
+
+                nopbaithi();
+
+
+
+            } else {
+
+                var p = parseInt((time / 60)).toString();
+
+                var g = (time % 60).toString();
+
+                if (g.length == 1)
+
+                    g = "0" + g;
+
+                if (p.length == 1)
+
+                    p = "0" + p;
+
+                return p + ":" + g;
+
+            }
+
+        }
+
+    }
+
+
+
+    function thi(time) {
+
+        thoigianthi(time);
+
+        $("#control-tab-main p.active").click();
+
+    }
+
+    function nopbaithi() {
+
+        clearInterval(delay_time_star);
+        if (lock_check_answer === 0) {
+            var chuoi_dapan = "{";
+            var index = 0;
+            var str;
+            $("#phieu-dap-an ul li").each(function() {
+                index++;
+                if (index === $("#phieu-dap-an ul li").length) {
+                    str = "}";
+                } else {
+                    str = ',';
+                }
+                chuoi_dapan += $(this).attr("class");
+                if ($(this).find("span.datraloi").length > 0)
+                    chuoi_dapan += ":" + $(this).find("span.active").attr("name") + str;
+                else
+                    chuoi_dapan += ":'null'" + str;
+            });
+            var url = '/check';
+            var data = eval('(' + chuoi_dapan + ')');
+            console.log(data);
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data,
+                success: function(res) {
+                    loading_hide();
+                    lock_check_answer = 1;
+                    console.log(res);
+                    $.each(res, function(key, val) {
+                        $("#ques" + val.idquestion).children("#ans" + val.idanswer).addClass("correct");
+                        $("." + val.idquestion).children("#check" + val.idanswer).css("background-color", "yellow")
+                    })
+
+                },
+                error: function(msg) {
+                    alert("An error occurred, please try again later!");
+                    loading_hide();
+                }
+
+            });
+
+
+
+
+
+        }
+
+    }
+</script>
+
+
+
+<script>
+    thi(7200)
+</script>
+
+
+</html>

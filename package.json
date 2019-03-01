@@ -1,0 +1,26 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodejs ./bin/www"
+  },
+  "dependencies": {
+    "array-sort": "^1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "d3-collection": "^1.0.7",
+    "debug": "~0.7.4",
+    "each-async": "^1.1.1",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.15.6",
+    "for-each-async": "^0.1.1",
+    "knex": "^0.15.2",
+    "morgan": "~1.0.0",
+    "mysql": "^2.16.0",
+    "q": "^1.5.1",
+    "static-favicon": "~1.0.0"
+  }
+}

@@ -1,0 +1,76 @@
+<% include ../partials/exam_head%>
+    <section class="content">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Quick Example</h3>
+            </div>
+            <form role="form" enctype="multipart/form-data" action="/uploadques" method="POST">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="question">Question</label>
+                        <input type="text" class="form-control" id="question" placeholder="Enter question" name="question">
+                    </div>
+                    <div class="form-group">
+                        <label>Select</label>
+                        <select class="form-control" name="type">
+                          <option>Dokkai</option>
+                          <option>Choukai</option>
+                          <option>Goi</option>
+                          <option>Bunpo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mp3">Mp3</label>
+                        <input type="file" id="mp3" name="mp3">
+                        <label for="image">Image</label>
+                        <input type="file" id="image" name="image">
+                    </div>
+                    <label for="ans">Answer</label>
+                    <div class="form-group" id="ans">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                        <input type="radio" name="checkA">
+                                      </span>
+                                <input type="text" class="form-control" name="ansA">
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                            <input type="radio" name="checkB">
+                                          </span>
+                                <input type="text" class="form-control" name="ansB">
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                                <input type="radio" name="checkC">
+                                              </span>
+                                <input type="text" class="form-control" name="ansC">
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                                    <input type="radio" name="checkD">
+                                                  </span>
+                                <input type="text" class="form-control" name="ansD">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+    <% include ../partials/exam_footer%>
